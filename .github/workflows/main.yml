@@ -22,4 +22,4 @@ jobs:
           greeting: "Welcome"
           name: "User  "
           pass: ${{ secrets.pass }}  
-    environment: app
+    environment: app 
