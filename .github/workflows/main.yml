@@ -14,13 +14,12 @@ jobs:
 
   call_echo_workflow_2:
     runs-on: ubuntu-latest
-    environment: app
-    needs:
-        - call_echo_workflow_1
+    needs: call_echo_workflow_1  
     steps:
-        - name: Running first
-          uses: ./.github/workflows/wf2.yml
-          with:
-            greeting: "Welcome"
-            name: "User "
-            pass: ${{ secrets.pass }}
+      - name: Call Echo Workflow 2
+        uses: ./.github/workflows/wf2.yml  
+        with:
+          greeting: "Welcome"
+          name: "User  "
+          pass: ${{ secrets.pass }}  
+    environment: app
