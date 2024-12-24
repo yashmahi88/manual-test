@@ -2,6 +2,9 @@ name: Echo Workflow 2
 
 on:
   workflow_call:
+    secrets:
+        pass:
+            required: true
     inputs:
       greeting:
         required: true
@@ -17,3 +20,7 @@ jobs:
       - name: Echo Greeting
         run: |
           echo "${{ inputs.greeting }}, ${{ inputs.name }}!"
+      - name: Using secret
+        run: |
+          echo "Printing secrets
+          echo "pass is :${{ secrets.pass }}"

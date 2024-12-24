@@ -23,3 +23,4 @@ jobs:
           with:
             greeting: "Welcome"
             name: "User "
+            pass: ${{ secrets.pass }}
