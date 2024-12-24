@@ -1,0 +1,20 @@
+name: Echo Workflow 1
+
+on:
+  workflow_call:
+    inputs:
+      message:
+        required: true
+        type: string
+      number:
+        required: true
+        type: string
+
+jobs:
+  echo_job_1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo Message
+        run: |
+          echo "Message from Workflow 1: ${{ inputs.message }}"
+          echo "Number from Workflow 1: ${{ inputs.number }}"

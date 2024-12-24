@@ -1,0 +1,23 @@
+name: Main Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  call_echo_workflow_1:
+    uses: ./.github/workflows/wf1.yml
+    with:
+      message: "Hello from Main Workflow!"
+      number: 42
+
+  call_echo_workflow_2:
+    runs-on: ubuntu-latest
+    environment: app
+    steps:
+        - name: Running first
+          uses: ./.github/workflows/wf2.yml
+          with:
+            greeting: "Welcome"
+            name: "User "
