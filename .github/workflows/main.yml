@@ -11,6 +11,7 @@ jobs:
     with:
       message: "Hello from Main Workflow!"
       number: 42
+      service: mongo
 
   # call_echo_workflow_2:
   #   runs-on: ubuntu-latest
