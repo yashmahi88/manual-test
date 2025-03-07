@@ -12,14 +12,15 @@ jobs:
       message: "Hello from Main Workflow!"
       number: 42
 
-  call_echo_workflow_2:
-    runs-on: ubuntu-latest
-    needs: call_echo_workflow_1  
-    steps:
-      - name: Call Echo Workflow 2
-        uses: ./.github/workflows/wf2.yml  
-        with:
-          greeting: "Welcome"
-          name: "User  "
-          pass: ${{ secrets.pass }}  
-    environment: app 
+  # call_echo_workflow_2:
+  #   runs-on: ubuntu-latest
+  #   needs: call_echo_workflow_1
+  #   uses: ./.github/workflows/wf2.yml  
+  #   steps:
+  #     - name: Call Echo Workflow 2
+  #       uses: ./.github/workflows/wf2.yml  
+  #       with:
+  #         greeting: "Welcome"
+  #         name: "User  "
+  #         pass: ${{ secrets.pass }}  
+  #   environment: app 

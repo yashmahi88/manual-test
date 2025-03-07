@@ -9,10 +9,18 @@ on:
       number:
         required: true
         type: string
+      service:
+        required: false
+        type: string
 
 jobs:
   echo_job_1:
     runs-on: ubuntu-latest
+    services:
+      mongo:
+        image: ${{ inputs.service }}
+        ports:
+          - 27017:27017
     steps:
       - name: Echo Message
         run: |
